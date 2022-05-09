@@ -15,8 +15,8 @@ Citizen.CreateThread(function()
 		--StopResource(GetCurrentResourceName());
 		print("[" .. GetCurrentResourceName() .. "] " .. "IMPORTANT: This resource must be named Badger_Discord_API for it to work properly with other scripts...");
 	end
-	print("[Badger_Discord_API] For support, make sure to join Badger's official Discord server: discord.gg/WjB5VFz");
-	print('^7[^2Zap-Hosting^7] ^3Use code ^5TheWolfBadger-4765 ^3at checkout for ^220% ^3off of selected services. Visit ^5https://zap-hosting.com/badger ^3to get started!');
+	--print("[Badger_Discord_API] For support, make sure to join Badger's official Discord server: discord.gg/WjB5VFz");
+	--print('^7[^2Zap-Hosting^7] ^3Use code ^5TheWolfBadger-4765 ^3at checkout for ^220% ^3off of selected services. Visit ^5https://zap-hosting.com/badger ^3to get started!');
 end)
 
 tracked = {}
@@ -24,20 +24,20 @@ tracked = {}
 RegisterNetEvent('Badger_Discord_API:PlayerLoaded')
 AddEventHandler('Badger_Discord_API:PlayerLoaded', function()
 	if (GetCurrentResourceName() ~= "Badger_Discord_API") then 
-		TriggerClientEvent('chatMessage', -1, '^1[^5SCRIPT ERROR^1] ^3The script ^1' .. GetCurrentResourceName() .. ' ^3will not work properly... You must '
-	.. 'rename the resource to ^1Badger_Discord_API');
+		--TriggerClientEvent('chatMessage', -1, '^1[^5SCRIPT ERROR^1] ^3The script ^1' .. GetCurrentResourceName() .. ' ^3will not work properly... You must '
+	--.. 'rename the resource to ^1Badger_Discord_API');
 	end
 	local license = ExtractIdentifiers(source).license;
 	if (tracked[license] == nil) then 
 		tracked[license] = true;
-		TriggerClientEvent('chatMessage', source, 
-		'^1[^5Badger_Discord_API^1] ^3The Discord API script was created by Badger. You may join his Discord at: ^6discord.gg/WjB5VFz')
+		--TriggerClientEvent('chatMessage', source, 
+		--'^1[^5Badger_Discord_API^1] ^3The Discord API script was created by Badger. You may join his Discord at: ^6discord.gg/WjB5VFz')
 	end
-	TriggerClientEvent('chatMessage', source, 
-		'^7[^2Zap-Hosting^7] ^3Use code ^5TheWolfBadger-4765 ^3at checkout for ^220% ^3off of selected services. Visit ^5https://zap-hosting.com/badger ^3to get started!');
+	--TriggerClientEvent('chatMessage', source, 
+		--'^7[^2Zap-Hosting^7] ^3Use code ^5TheWolfBadger-4765 ^3at checkout for ^220% ^3off of selected services. Visit ^5https://zap-hosting.com/badger ^3to get started!');
 end)
 
-card = '{"type":"AdaptiveCard","$schema":"http://adaptivecards.io/schemas/adaptive-card.json","version":"1.3","body":[{"type":"Image","url":"' .. Config.Splash.Header_IMG .. '","horizontalAlignment":"Center"},{"type":"Container","items":[{"type":"TextBlock","text":"Badger_Discord_API","wrap":true,"fontType":"Default","size":"ExtraLarge","weight":"Bolder","color":"Light","horizontalAlignment":"Center"},{"type":"TextBlock","text":"' .. Config.Splash.Heading1 .. '","wrap":true,"size":"Large","weight":"Bolder","color":"Light","horizontalAlignment":"Center"},{"type":"TextBlock","text":"' .. Config.Splash.Heading2 .. '","wrap":true,"color":"Light","size":"Medium","horizontalAlignment":"Center"},{"type":"ColumnSet","height":"stretch","minHeight":"100px","bleed":true,"horizontalAlignment":"Center","columns":[{"type":"Column","width":"stretch","items":[{"type":"ActionSet","actions":[{"type":"Action.OpenUrl","title":"Discord","url":"' .. Config.Splash.Discord_Link .. '","style":"positive"}]}],"height":"stretch"},{"type":"Column","width":"stretch","items":[{"type":"ActionSet","actions":[{"type":"Action.OpenUrl","title":"Website","style":"positive","url":"' .. Config.Splash.Website_Link .. '"}]}]}]},{"type":"ActionSet","actions":[{"type":"Action.OpenUrl","title":"Click to join Badger\'s Discord","style":"destructive","iconUrl":"https://i.gyazo.com/0904b936e8e30d0104dec44924bd2294.gif","url":"https://discord.com/invite/WjB5VFz"}]}],"style":"default","bleed":true,"height":"stretch"},{"type":"Image","url":"https://i.gyazo.com/7e896862b14be754ae8bad90b664a350.png","selectAction":{"type":"Action.OpenUrl","url":"https://zap-hosting.com/badger"},"horizontalAlignment":"Center"}]}'
+card = '{"type":"AdaptiveCard","$schema":"http://adaptivecards.io/schemas/adaptive-card.json","version":"1.3","body":[{"type":"Image","url":"' .. Config.Splash.Header_IMG .. '","horizontalAlignment":"Center"},{"type":"Container","items":[{"type":"TextBlock","text":"Badger_Discord_API","wrap":true,"fontType":"Default","size":"ExtraLarge","weight":"Bolder","color":"Light","horizontalAlignment":"Center"},{"type":"TextBlock","text":"' .. Config.Splash.Heading1 .. '","wrap":true,"size":"Large","weight":"Bolder","color":"Light","horizontalAlignment":"Center"},{"type":"TextBlock","text":"' .. Config.Splash.Heading2 .. '","wrap":true,"color":"Light","size":"Medium","horizontalAlignment":"Center"},{"type":"ColumnSet","height":"stretch","minHeight":"100px","bleed":true,"horizontalAlignment":"Center","columns":[{"type":"Column","width":"stretch","items":[{"type":"ActionSet","actions":[{"type":"Action.OpenUrl","title":"Discord","url":"' .. Config.Splash.Discord_Link .. '","style":"positive"}]}],"height":"stretch"},{"type":"Column","width":"stretch","items":[{"type":"ActionSet","actions":[{"type":"Action.OpenUrl","title":"Website","style":"positive","url":"' .. Config.Splash.Website_Link .. '"}]}]}]},{"type":"ActionSet","actions":[{"type":"Action.OpenUrl","title":'..Config.button..',"style":"destructive","iconUrl":'..Config.IconLink..',"url":'..Config.buttonLink..'}]}],"style":"default","bleed":true,"height":"stretch"},{"type":"Image","url":'..Config.Icon2..',"selectAction":{"type":"Action.OpenUrl","url":'..Config.buttonLink2..'},"horizontalAlignment":"Center"}]}'
 if Config.Splash.Enabled then 
 	AddEventHandler('playerConnecting', function(name, setKickReason, deferrals) 
 		-- Player is connecting
