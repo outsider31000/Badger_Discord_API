@@ -27,5 +27,6 @@ Config.Splash = {
 	IconLink = "", --link
 	Icon2 = "", -- link
 	IconLink2 = "", --link
+	buttonLink2 = "", --link
 	
 }
