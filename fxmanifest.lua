@@ -1,10 +1,10 @@
 fx_version 'cerulean'
-game 'gta5'
-
+game 'rdr3'
+rdr3_warning 'I acknowledge that this is a prerelease build of RedM, and I am aware my resources *will* become incompatible once RedM ships.'
 author 'JaredScar'
 description 'Badger\'s Discord API'
 version '1.6'
-url 'https://github.com/JaredScar/Badger_Discord_API'
+
 
 client_scripts {
 	'client.lua',
@@ -12,7 +12,7 @@ client_scripts {
 
 server_scripts {
 	'config.lua',
-	"server.lua", -- Uncomment this line
+	"server.lua", 
 	--"example.lua" -- Remove this when you actually start using the script!!!
 }
 
