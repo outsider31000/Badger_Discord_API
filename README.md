@@ -1,6 +1,6 @@
 # Badger_Discord_API
 
-
+- DO NOT RENAME THE SCRIPT or it wont work
 ## Documentation
 [Installation Guide](https://docs.badger.store/fivem-discord-scripts/badger_discord_api/installation-script)
 
