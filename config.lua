@@ -22,4 +22,10 @@ Config.Splash = {
 	Heading2 = "Make sure to join our Discord and check out our website!",
 	Discord_Link = '',
 	Website_Link = '',
+	button = "button",
+	buttonLink = "", -- link
+	IconLink = "", --link
+	Icon2 = "", -- link
+	IconLink2 = "", --link
+	
 }
